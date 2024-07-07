@@ -11,6 +11,7 @@ document.getElementById('start-test').addEventListener('click', async () => {
         document.getElementById('upload').textContent = (data.upload.bandwidth / 125000).toFixed(2);
     } catch (error) {
         console.error('Error fetching speed test data:', error);
+        alert('Failed to fetch speed test data. Please try again later.');
     }
 
     document.getElementById('loading').style.display = 'none';
