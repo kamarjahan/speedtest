@@ -1,1 +1,30 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Test</title>
+    <style>
+        #results {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #results div {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Speed Test</h1>
+    <button id="start-test">Start Test</button>
+    <div id="results">
+        <div>Ping: <span id="ping"></span> ms</div>
+        <div>Download: <span id="download"></span> Mbps</div>
+        <div>Upload: <span id="upload"></span> Mbps</div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
