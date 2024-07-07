@@ -11,13 +11,16 @@ app.get('/api/speedtest', async (req, res) => {
         const test = speedTest({ acceptLicense: true });
 
         test.on('data', data => {
+            console.log('Speed test data:', data); // Log data for debugging
             res.json(data);
         });
 
         test.on('error', err => {
+            console.error('Speed test error:', err); // Log error for debugging
             res.status(500).json({ error: err.message });
         });
     } catch (error) {
+        console.error('Server error:', error); // Log error for debugging
         res.status(500).json({ error: error.message });
     }
 });
