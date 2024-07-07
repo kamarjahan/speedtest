@@ -5,7 +5,7 @@ document.getElementById('start-test').addEventListener('click', async () => {
     try {
         const response = await fetch('/api/speedtest');
         const data = await response.json();
-        
+
         if (data.error) {
             throw new Error(data.error);
         }
@@ -14,7 +14,6 @@ document.getElementById('start-test').addEventListener('click', async () => {
         const download = data.download ? (data.download.bandwidth / 125000).toFixed(2) : 'N/A';
         const upload = data.upload ? (data.upload.bandwidth / 125000).toFixed(2) : 'N/A';
 
-        
         document.getElementById('ping').textContent = ping;
         document.getElementById('download').textContent = download;
         document.getElementById('upload').textContent = upload;
@@ -26,13 +25,3 @@ document.getElementById('start-test').addEventListener('click', async () => {
     document.getElementById('loading').style.display = 'none';
     document.getElementById('results').style.display = 'flex';
 });
-
-
-
-
-
-
-
-
-
-
